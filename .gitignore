@@ -55,3 +55,7 @@ lambda-invoke-response.json
 packaged-sam.yaml
 
 .idea
+.env.local
+.env.remote.dev
+prod-2026-02-23.sql
+ql
