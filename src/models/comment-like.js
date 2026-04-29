@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
-      autoIncrement: true,
+      // autoIncrement: true,
     },
     comment_id: {
       type: DataTypes.UUID,
