@@ -9,9 +9,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgis/postgis:14-3.4
+        env:
+          POSTGRES_USER: streetlives
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -23,4 +39,14 @@ jobs:
         run: npm ci
 
       - name: Run tests
+        env:
+          NODE_ENV: test
+          DATABASE_NAME: test
+          DATABASE_USER: streetlives
+          DATABASE_PASSWORD: password
+          DATABASE_HOST: localhost
+          DATABASE_PORT: 5432
+          OPENAI_API_KEY: dummy-key-for-tests
         run: npm test
+
+
