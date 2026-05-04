@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`get location info should get all relevant fields for a given location 1`] = `
-{
-  "AccessibilityForDisabilities": {},
-  "EventRelatedInfos": {},
-  "Organization": {
-    "Phones": {},
+Object {
+  "AccessibilityForDisabilities": Object {},
+  "EventRelatedInfos": Object {},
+  "Organization": Object {
+    "Phones": Object {},
     "description": "An organization meant for testing purposes.",
     "email": null,
     "name": "The Test Org",
@@ -13,8 +13,8 @@ exports[`get location info should get all relevant fields for a given location 1
     "partners": null,
     "url": "www.streetlives.com",
   },
-  "Phones": {
-    "0": {
+  "Phones": Object {
+    "0": Object {
       "description": null,
       "extension": null,
       "language": null,
@@ -22,20 +22,20 @@ exports[`get location info should get all relevant fields for a given location 1
       "type": null,
     },
   },
-  "Services": {
-    "0": {
+  "Services": Object {
+    "0": Object {
       "DocumentsInfo": null,
-      "Eligibilities": {},
-      "EventRelatedInfos": {},
-      "HolidaySchedules": {},
-      "Languages": {},
-      "Phones": {},
-      "RegularSchedules": {},
-      "RequiredDocuments": {},
-      "ServiceAreas": {},
-      "ServiceTaxonomySpecificAttributes": {},
-      "Taxonomies": {
-        "0": {
+      "Eligibilities": Object {},
+      "EventRelatedInfos": Object {},
+      "HolidaySchedules": Object {},
+      "Languages": Object {},
+      "Phones": Object {},
+      "RegularSchedules": Object {},
+      "RequiredDocuments": Object {},
+      "ServiceAreas": Object {},
+      "ServiceTaxonomySpecificAttributes": Object {},
+      "Taxonomies": Object {
+        "0": Object {
           "name": "Shelter",
           "name_vector": null,
           "parent_name": null,
@@ -47,10 +47,10 @@ exports[`get location info should get all relevant fields for a given location 1
       "email": null,
       "fees": null,
       "interpretation_services": null,
-      "metadata": {
+      "metadata": Object {
         "documents": null,
-        "service": {},
-        "sources": {},
+        "service": Object {},
+        "sources": Object {},
       },
       "name": "A specific offering",
       "name_vector": null,
@@ -58,7 +58,7 @@ exports[`get location info should get all relevant fields for a given location 1
     },
   },
   "additionalInfo": "And some other, perhaps less standardized, information.",
-  "address": {
+  "address": Object {
     "city": "New York",
     "country": "United States",
     "postalCode": "10001",
@@ -68,11 +68,11 @@ exports[`get location info should get all relevant fields for a given location 1
   },
   "closed": false,
   "description": "This is how one would describe this shelter.",
-  "metadata": {
-    "address": {},
-    "location": {},
-    "organization": {},
-    "sources": {},
+  "metadata": Object {
+    "address": Object {},
+    "location": Object {},
+    "organization": Object {},
+    "sources": Object {},
   },
   "name": "Some kind of center",
   "name_vector": null,

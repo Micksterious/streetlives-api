@@ -1,3 +1,34 @@
+// Avoid loading modern Node 18+ SDK packages in Jest on older Node versions.
+jest.mock('openai', () => ({
+  __esModule: true,
+  default: class OpenAI {
+    constructor() {
+      this.chat = {
+        completions: {
+          create: async () => ({
+            id: 'mock',
+            object: 'chat.completion',
+            choices: [],
+          }),
+        },
+      };
+    }
+  },
+}));
+
+jest.mock('@aws-sdk/client-cognito-identity-provider', () => ({
+  __esModule: true,
+  CognitoIdentityProviderClient: class CognitoIdentityProviderClient {
+    constructor() {}
+    send() {
+      return Promise.resolve({ Users: [] });
+    }
+  },
+  ListUsersCommand: class ListUsersCommand {
+    constructor() {}
+  },
+}));
+
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
